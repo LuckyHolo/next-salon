@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation"
 import { getShop } from "@/lib/services/shops"
 
+import ShopHero from '@/components/shop/ShopHero'
+
 type Props = {
     params: Promise<{ id: string }>
 }
@@ -16,7 +18,7 @@ export default async function ShopDetailPage({ params }: Props) {
 
     return (
         <div>
-            <h1 className="text-2xl font-bold">{shop.name}</h1>
+            <ShopHero shop = {shop} />
         </div>
     )
 }
